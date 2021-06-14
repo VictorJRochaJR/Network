@@ -9,13 +9,18 @@ import { AppState } from '../AppState'
 import { computed, reactive } from 'vue'
 
 export default {
+  data() {
+    return {
+      posts: computed(() => AppState.posts)
+    }
+  },
   setup() {
     const state = reactive({
 
     })
     return {
-      state,
-      posts: computed(() => AppState.posts)
+      state
+      // posts: computed(() => AppState.posts)
     }
   },
   components: {}

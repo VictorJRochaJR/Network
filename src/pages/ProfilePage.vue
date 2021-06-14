@@ -16,7 +16,7 @@ import { computed, reactive, watchEffect } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { profileService } from '../services/ProfileService'
 import { postService } from '../services/PostService'
-import Notification from '../utils/Notification'
+
 export default {
 //   name: 'ProfilePage',
   setup() {
@@ -29,7 +29,6 @@ export default {
         await profileService.getProfile(route.params.id)
         await postService.getPosts('api/posts?creatorId=' + route.params.id)
       } catch (error) {
-        Notification.toast('this user does not exist', 'warning')
         router.push({ name: 'Home' })
       }
     })

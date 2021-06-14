@@ -47,7 +47,7 @@ export default {
           await postService.getPosts()
           state.newPost = {}
         } catch (error) {
-          Notification.toast(error, 'error')
+          Notification.toast('Must Be Logged In')
         }
       }
     }
